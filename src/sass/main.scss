@@ -11,21 +11,16 @@
 }
 
 body {
-  @include flex-system(column, space-between, none, 0);
+  @include flex-system(column, space-between, '', 0);
+  background-color: $primary-color;
+  position: relative;
   height: 100vh;
-  background-color: $secondary-color;
 }
 
 header {
   padding: $padding-m;
   background-color: $bg-color;
   color: white;
-
-  div.container {
-    @include flex-system(row, space-between, none, 0);
-    width: min(90%, 1000px);
-    margin: 0 auto;
-  }
 
   ul {
     @include flex-system(row, none, center, 1em);
@@ -40,7 +35,57 @@ header {
 
 footer {
   text-align: center;
-  background-color: $bg-color;
   color: white;
+  background-color: $bg-color;
   padding: $padding-m 0;
+}
+
+.container {
+  @include flex-system(row, space-between, '', 0);
+  width: $container-size;
+  margin: 0 auto;
+}
+
+main {
+  @include flex-system(column, center, center, 20px);
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+  width: $container-size;
+}
+
+.entry {
+  @include flex-system(column, '', center, '');
+  width: 100%;
+
+  input {
+    outline: none;
+    border: 1px;
+    border-radius: $base-border-radius;
+    padding: 0 $padding-l;
+    height: 30px;
+    width: 50%;
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  .error-msg {
+    font-size: $font-s;
+    color: red;
+  }
+}
+
+#output {
+  @include flex-system(column, '', center, 0);
+  border: $base-border-thickness;
+  height: 150px;
+  width: 100%;
+
+  textarea {
+    resize: vertical;
+    min-height: 30px;
+    width: 50%;
+  }
 }
