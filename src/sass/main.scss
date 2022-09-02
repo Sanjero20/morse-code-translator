@@ -1,3 +1,46 @@
-h1 {
-  color: blue;
+@import 'base';
+@import 'variables';
+@import 'colors';
+
+@mixin flex-system($direction, $justify, $align, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+body {
+  @include flex-system(column, space-between, none, 0);
+  height: 100vh;
+  background-color: $secondary-color;
+}
+
+header {
+  padding: $padding-m;
+  background-color: $bg-color;
+  color: white;
+
+  div.container {
+    @include flex-system(row, space-between, none, 0);
+    width: min(90%, 1000px);
+    margin: 0 auto;
+  }
+
+  ul {
+    @include flex-system(row, none, center, 1em);
+    li {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: $bg-color;
+  color: white;
+  padding: $padding-m 0;
 }
