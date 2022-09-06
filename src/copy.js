@@ -1,4 +1,5 @@
 const textArea = document.querySelector('textarea');
+const tooltip = document.getElementById('myToolTip');
 
 function copyToClipBoard() {
   /* Mobile Device */
@@ -7,6 +8,12 @@ function copyToClipBoard() {
 
   navigator.clipboard.writeText(textArea.value);
   console.log('copied to clipboard');
+
+  tooltip.innerHTML = 'Copied Text';
 }
 
-export { copyToClipBoard };
+function tooltipText() {
+  tooltip.innerHTML = 'Copy to Clipboard';
+}
+
+export { copyToClipBoard, tooltipText };

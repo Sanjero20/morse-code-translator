@@ -1,8 +1,7 @@
-import { copyToClipBoard } from './copy';
+import { copyToClipBoard, tooltipText } from './copy';
 import './sass/main.scss';
 
 /*
-
 TODO: Practice mode
 */
 
@@ -53,10 +52,17 @@ const textArea = document.querySelector('textarea');
 const copyBtn = document.querySelector('.copy');
 
 // Event Listeners
+
+//Copy Button
 copyBtn.addEventListener('click', e => {
   copyToClipBoard();
 });
 
+copyBtn.addEventListener('mouseout', e => {
+  tooltipText();
+});
+
+// Text Translation Box
 textArea.addEventListener('input', e => {
   /* prevent line break in the text area */
   if (e.key == 'Enter') {
@@ -64,6 +70,7 @@ textArea.addEventListener('input', e => {
   }
 });
 
+// User Input Box
 inputBox.addEventListener('input', e => {
   if (!checkValidity(e.key, ALPHANUMERIC)) return;
 

@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Code Translator</title>
+    <script
+      src="https://kit.fontawesome.com/5f33a2223c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js" defer></script>
   </head>
   <body>
@@ -12,23 +16,34 @@
       <div class="container">
         <h1>Morse Code</h1>
         <ul>
-          <li>Home</li>
-          <li>Practice</li>
-          <li>About</li>
+          <li>
+            <i class="fa-solid fa-house"></i>
+            Home
+          </li>
+          <li>
+            <i class="fa-solid fa-table-list"></i>
+            Table
+          </li>
         </ul>
       </div>
     </header>
 
     <main>
       <div class="entry">
-        <h4></h4>
+        <h4>Text</h4>
         <input type="text" id="input-box" class="" placeholder="Enter text" />
         <p class="error-msg"></p>
       </div>
       <div id="output">
         <h4>Translation</h4>
-        <textarea name="" id="output-box"></textarea>
-        <button class="copy">Copy to Clipboard</button>
+        <textarea name="" id="output-box" disabled></textarea>
+
+        <div class="tooltip">
+          <button class="copy">
+            <span class="tooltiptext" id="myToolTip">Copy to Clipboard</span>
+            <i class="fa-regular fa-clipboard"></i>
+          </button>
+        </div>
       </div>
     </main>
 
