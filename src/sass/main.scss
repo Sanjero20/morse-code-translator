@@ -1,10 +1,9 @@
 @import 'base';
 @import 'variables';
-@import 'colors';
-@import 'mobile';
+@import './pages/mobile';
 
 // Import pages styling
-@import 'practice';
+@import './pages/practice';
 
 // Mixins (functions)
 @mixin flex-system($direction, $justify, $align, $gap) {
@@ -29,7 +28,7 @@ header {
   color: white;
 
   ul {
-    @include flex-system(row, none, center, 1em);
+    @include flex-system(row, none, center, 1.5em);
     li {
       cursor: pointer;
       &:hover {
