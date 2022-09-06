@@ -1,6 +1,11 @@
 import { copyToClipBoard } from './copy';
 import './sass/main.scss';
 
+/*
+
+TODO: Practice mode
+*/
+
 const codeTranslation = {
   a: '.-',
   b: '-...',
@@ -62,7 +67,7 @@ textArea.addEventListener('input', e => {
 inputBox.addEventListener('input', e => {
   if (!checkValidity(e.key, ALPHANUMERIC)) return;
 
-  const text = inputBox.value;
+  const text = inputBox.value.toLowerCase();
 
   const isValid = checkValidity(text, ALPHANUMERIC);
   if (isValid) {
@@ -96,7 +101,7 @@ function textToCode(text) {
 
   splitText.forEach(char => {
     if (char === ' ') {
-      translation.push('||');
+      translation.push('|');
     } else {
       const code = charToCode(char);
       translation.push(code);
