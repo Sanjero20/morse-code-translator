@@ -1,4 +1,7 @@
 import { copyToClipBoard, tooltipText } from './copy';
+import { resetInput } from './reset';
+
+// Styling
 import './sass/main.scss';
 
 /*
@@ -51,10 +54,15 @@ const ALPHANUMERIC = '^[a-z0-9 ]+$';
 const inputBox = document.querySelector('input');
 const textArea = document.querySelector('textarea');
 const copyBtn = document.querySelector('.copy');
+const resetBtn = document.querySelector('.reset');
 
 // Event Listeners
 
 //Copy Button
+resetBtn.addEventListener('click', () => {
+  resetInput();
+});
+
 copyBtn.addEventListener('click', e => {
   copyToClipBoard();
 });
