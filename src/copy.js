@@ -10,10 +10,12 @@ function copyToClipBoard() {
   console.log('copied to clipboard');
 
   tooltip.innerHTML = 'Copied Text';
+  tooltip.classList.add('copied');
 }
 
 function tooltipText() {
   tooltip.innerHTML = 'Copy to Clipboard';
+  tooltip.classList.remove('copied');
 }
 
 export { copyToClipBoard, tooltipText };

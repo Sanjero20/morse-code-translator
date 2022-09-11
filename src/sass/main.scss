@@ -110,6 +110,10 @@ main {
     &:hover {
       background-color: darken($color: #a5a5a5, $amount: 0);
     }
+
+    i {
+      pointer-events: none;
+    }
   }
 
   .tooltip {
@@ -123,19 +127,26 @@ main {
 
     .tooltiptext {
       visibility: hidden;
-      width: 140px;
+      width: 120px;
       background-color: #555;
       color: #fff;
       text-align: center;
       border-radius: 6px;
-      padding: 5px;
+      padding: 10px;
       position: absolute;
       z-index: 1;
-      bottom: 150%;
+
+      bottom: 100%;
       left: 50%;
-      margin-left: -75px;
+      right: 50%;
+      transform: translate(-50%, -50%);
+
       opacity: 0;
       transition: opacity 0.3s;
+
+      &.copied {
+        width: 80px;
+      }
 
       &::after {
         content: '';

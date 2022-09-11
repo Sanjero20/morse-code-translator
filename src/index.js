@@ -2,7 +2,8 @@ import { copyToClipBoard, tooltipText } from './copy';
 import './sass/main.scss';
 
 /*
-TODO: Practice mode
+TODO: Practice mode / reverse input 
+? (use space bar to simulate typing morse code)
 */
 
 const codeTranslation = {
